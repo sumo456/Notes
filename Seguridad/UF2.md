@@ -1,306 +1,241 @@
-1. MESURES DE PROTECCIO DE LES DADES||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+# MESURES DE PROTECCIO DE LES DADES
+
+## MESURES DE SEGURETAT
+
+### Preventives (Actives)
+Permeten anticipar un desastre per actuar abans que es produeixi. Exemple: SMART (Self-Monitoring, Analysis, and Reporting Technology) en discos durs. És una funció que monitora la informació interna de les unitats d'emmagatzematge.
+
+### Correctores o pal·liatives (Passives)
+Aquesta mesura busca tornar a l'estat anterior al desastre el més aviat possible. Exemple: Restablir una còpia de seguretat prèviament feta.
+
+## RESPOSTES TÍPIQUES A FALLADES DE MAQUINARI
+
+### SUBSTITUIR
+1. Desembalar
+2. Instal·lar sistema operatiu
+3. Instal·lar controladors
+4. Actualitzar sistema operatiu
+5. Instal·lar programari i configuració
+
+### DUPLICACIÓ (REDUNDÀNCIA): ALTA DISPONIBILITAT O HA (HIGH AVAILABILITY)
+1. Fonts d'alimentació duplicades
+2. Controladors de discos duplicats
+3. Channel bonding (Duplicar targetes de xarxa)
+4. Discos durs duplicats (RAID)
+5. Servidors complets duplicats
+6. Centre de Processament de Dades (CPD) complet
+7. Mirroring de la xarxa (El Port Mirroring és una tècnica que permet duplicar selectivament el tràfic de xarxa d'un port o diversos ports en un switch i enviar-lo a un altre port per a la seva anàlisi. Això facilita la monitorització del tràfic sense afectar el rendiment de la xarxa.)
+
+## RESPOSTES TÍPIQUES A FALLADES DE PROGRAMARI
+Solució bàsica: Reinstal·lar. Pot ser una gran pèrdua de temps. Cal solucionar els problemes el més aviat possible. Hi ha organitzacions que no es poden permetre estar molt temps aturades. Restaurar una imatge completa del sistema és una solució preferible per ser molt més ràpida. Després probablement caldrà restaurar dades de programes.
+
+## PLA DE CONTINGÈNCIA
+És necessari tenir un pla de contingència, no es poden prendre decisions en el moment del desastre, ja que és una emergència.
+
+Plan de contingència: Document que conté una descripció pas a pas per tornar a la normalitat en cas d'un incident de seguretat.
+
+- Preveu els problemes abans que passin
+- Determina quins són els elements crítics i els no crítics
+- Determina què fer en cas de fallada
+- Determina la política de còpies de seguretat
+- Determina les responsabilitats del personal
+
+---
+
+# MITJANS D’EMMAGATZEMAMENT
+
+## CLASSIFICACIÓ DE DISPOSITIUS
+
+### SEGONS EL MODE D’ACCÉS A LES DADES
+- **Accés seqüencial**: El capçal de lectura del dispositiu ha de passar per la totalitat de les dades guardades prèviament a les dades a les quals es vol accedir. Exemple: Per arribar a la dada en posició 5, s'ha de passar per 1, 2, 3, 4. Funcionament normal de les unitats de cinta.
+- **Accés aleatori**: El capçal de lectura accedeix directament a la ubicació física de la informació que es vol accedir. Es situa el capçal a sobre de la posició de la dada que es vol accedir. És el funcionament normal dels discos i les memòries semiconductores.
 
+### SEGONS L’ACCÉS DES DE LA CPU ALS DISPOSITIUS
+- **Dispositius primaris**: RAM, accessible directament des de la CPU. Al apagar es perd la informació.
+- **Dispositius secundaris**: Dispositius dins de l'equip però no accessibles directament per la CPU. Al apagar manté la informació. Exemple: Disc dur intern, disc SSD intern.
+- **Dispositius terciaris**: Sistemes generalment més lents que els anteriors. Necessiten un suport (CD, DVD, cinta) quan es volen utilitzar.
+- **Dispositius off-line**: Dispositius secundaris o terciaris que es desconnecten al finalitzar, connectats a un port de l'equip amb clau USB. Exemple: Pen drive, USB extern.
+- **Emplazament remot**: Els dispositius d'emmagatzematge resideixen en equips connectats via xarxa local o xarxa WAN. Exemple: NAS, SAN, Cloud.
+
+### SEGONS EL SUPORT QUE UTILITZEN
+- **Memòria RAM**: La més ràpida en lectura/escriptura. Són volàtils, es perd la informació al apagar l'ordinador.
+- **Memòria ROM**: Lectura ràpida, però no es pot escriure. No són volàtils.
+- **Memòria Flash**: Es pot llegir i escriure i no són volàtils. 
+    - Molt alta velocitat en lectura/escriptura, però amb poca capacitat.
+    - Normalment, molt més ràpides en lectura que en escriptura.
+    - Les memòries flash augmenten de capacitat i baixen de preu cada dia.
+    - Actualment existeixen "discos durs" amb memòries flash, els SSD.
+
+- **Suports magnètics**: 
+    - Existeix una superfície de plàstic o de metall sobre la qual el capçal de lectura "llegirà" els registres magnètics emmagatzemats en un material magnètic que es interpretaran com 0's i 1's.
+    - Aquest material magnètic pot estar repartit sobre una superfície circular (disc) o sobre una cinta que es desplaçarà d'una bobina a una altra.
+    - Tenen molta menys velocitat de lectura/escriptura que les memòries de semiconductors.
+    - Tenen molta més capacitat de dades que les memòries de semiconductors.
+    - Cal tenir cura, es trenca l'imant fàcilment.
+    - Exemple: Disquets, discos durs, cintes de backup.
+
+- **Suports òptics**:
+    - La capa superior té "forats" que es interpreten com 1's i 0's.
+    - La capa inferior fa reflectir el raig làser i calculant la diferència de temps en el reflex, es pot determinar si és un 0 o un 1.
+    - La seva capacitat de dades és mitjana: més que les memòries i menys que els suports magnètics.
+    - La seva velocitat d'accés també és mitjana. Més lent que els discos durs i més ràpida que les cintes i disquets.
+
+### EMMAGATZEMAMENT REMOT: SAN, NAS, CLOUD
+
+- **SAN (Storage Area Network)**: 
+    - Tenim una xarxa utilitzada per connectar servidors, arrays de discos i biblioteques de suport. Basada en tecnologia Fibre Channel i iSCSI.
+
+- **NAS (Network Attached Storage)**:
+    - Tecnologia d'emmagatzematge dedicada a compartir la capacitat d'un servidor amb ordinadors personals o servidors clients a través d'una xarxa d'ús general (normalment TCP/IP). Ús de protocols CIFS, SMB, NFS, FTP o TFTP.
+
+- **CLOUD**:
+    - Emmagatzematge al núvol també coneguda com a disc dur virtual. És un espai en un servidor que utilitzem per guardar arxius.
+
+---
+
+# ORGANITZACIÓ DE DISCOS
 
-MESURES DE SEGURETAT
+## DISC DURS
+- **Plato**: Cada disc del disc
+- **Cara**: Ambdues cares del disc
+- **Capçalera**: Número de capçaleres.
+- **Pista**: Circumferència dins de la cara.
+- **Cilindre**: Conjunt de diverses pistes.
+- **Sector**: Cada una de les divisions d'una pista.
+
+## PARTICIONS
+1. Crear partició
+2. Formatjar amb un sistema de fitxers (EXT4, NTFS, etc)
+
+### Models de particionat
+- **MBR (Master Boot Record)**: Funcionava amb sistema d'arrencada BIOS
+- **GPT (GUID Partition Table)**: Model més nou. Funciona amb sistema d'arrencada UEFI
+
+### Avantatges de fer particions
+- Ús de sistemes de fitxers antics
+- Guardar una còpia de restauració ràpida en una altra partició
+- Dual S.O
+- Separar partició d'intercanvi (SWAP) per millor rendiment
+- Creació de quotes físiques
+
+### PARTICIONAT MBR
+
+- **BIOS**: Primer programa que s'executa a l'arrencar. Creat per IBM 1983. S'emmagatzema en memòria flash ubicada a la placa base independentment del sistema d'emmagatzematge.
+- **MBR**: Registre en sector 0 llegit per BIOS a l'arrencar. Microsoft en 1983. Taula de 4 entrades, 1 per partició. Cada entrada indica inici de partició en disc.
 
-1. Preventives (Actives)
-
-Permiten anticipar un desastre para actuar antes que de produja.
-Ej.:SMART (Self-Monitoring, Analysis, and Reporting Technology) en discos duros.
-
-Es una funcion que monitorea la info interna de las unidades de almacenamiento.
-
-2. Correctores o pal·liatives (Passives)
-
-Estas medida buscar devolver al estado anterior al desastre lo antes possible. Pj.: Restablecer backup previamente hecho.
-
-
-RESPOSTES TIPIQUES A FALLADES DE MAQUINARI
-
-1. SUBSTITUIR
-
-1.1 Desembalar
-1.2 Instalar S.O
-1.3 Instalar drivers
-1.4 Actualizar S.O
-1.5 Instalar doftware y conf
-
-2. DUPLICACIO (REDUNDANCIA): ALTA DISPONIBILITAT O HA (HIGH AVAILABILITY)
-
-2.1 Fuentes de alimentación duplicadas
-2.2 Controladores de discos duplicados.
-2.3 Channel bonding (Duplicar tajetas de red)
-2.4 Discos duros duplicados (RAID)
-2.5 Servidores completos duplicados 
-2.6 CPD Completo 
-2.7 Mirroring de la red (El Port Mirroring es una técnica que permite duplicar selectivamente el tráfico de red de un puerto o varios puertos en un switch y enviarlo a otro puerto para su análisis. Esto facilita la monitorización del tráfico sin afectar el rendimiento de la red.)
-
-
-RESPOSTES TIPIQUES A FALLADES DE PROGRAMARI
-
-Solución básica: Reinstalar. Puede ser mucha perdida de tiempo.
-	Necesitas solucionar los problemas lo antes posible.
-	Hay organizaciones que no se pueden permitir estar mucho tiempo paradas.
-Restaurar una imagen completa del sistema.
-	És una solución preferible, por ser mucho mas rapida.
-	Despues seguramente hara falta restaurar datos de programas.
-
-PLA DE CONTINGENCIAEs necesario tener un plan de contingencia, no se pueden tomar decisiones en el mmomento del desastre, ya que es un aemergencia.
-
-Plan de contingnecia: Documento que contiene en el la descripcion paso a paso para volver a la normalidad en caso de un incidente de seguridad.
-
-	Previene los problemas antes de que pasen
-	Determina cuales son los elementos criticos y los no criticos.
-	Determina que hacer en caso de fallada
-	Determia la politica de copias de seguridad
-	Determina las responsabilidad del personal
-
-
-
-2.MITJANS D’EMMAGATZEMAMENT||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-
-CLASSIFICACIO DE DISPOSITIUS
-
-1. SEGONS EL MODE D’ACCÉS A LES DADES
-
-Acceso secuencial: El cabezal de lectura del dispositivo debe pasar por la totalidad de los datos guardados previamente a los datos que se quiere acceder.
-	Ej.: Para llegar al datoe n posicion 5, has de pasar por 1,2,3,4
-	Funcion normal de las unidades de cinta.
-
-Acceso aleatorio: El cabezal de lectura accede directamente donde se encuentra fisicamente la informacion que se quiere acceder.
-	Se situa el cabezal encima de la posicion del dato que se quiere acceder.
-	Es el funcionamiento normal de los discos y las memorias semiconductoras.
-
-2. SEGONS L’ACCÉS DES DE LA CPU ALS DISPOSITIUS
-
-Dispositivos primarios: RAM, accesible directamente des de la CPU. Al apagar se peirde la info
-
-Dispositivos secundarios: Dispositivos que se encuentran desnto del equipo pero no accesible directamente por la CPU.
-	Apaagr mantiene la info.
-	Ej.: Discdo duro interno, disco ssd interno
-
-Dispositivo terciarios: Sistemas generalmente mas lentos que los anteriores.
-	Necesidad de un soporta (cd, dvd, cinta) cuando queires utilizarlos.
-
-Dispositivo off-line: Dispositivos secundarios o terciarios que se desconectan al terminar, conectados a un puerto del equipo con llave USB.
-	Pen drive, USB externo
-
-Emplazamiento remoto: Los dispositivos de almacenamiento residen en equipos conectados vía red local o red WAN.
-	Ej.: NAS, SAN, Cloud
-
-
-3. SEGONS EL SUPORT QUE FAN SERVIR:
-
-Memoria RAM: La más rápida en R/W. Son volátiles, o bien, si se apaga el ordinador se pierde su información.
-
-Memoria ROM: Lectura rápida, pero no se puede escribir. No son volátiles.
-
-Memoria Flash: Se puede llegar y escribir y no son volátiles.
-
-	De muy alta velocidad en R/W, pero con poca capacidad.
-	Normalmente, mucho más rápido en lectura que en escritura.
-	Las memorias flash cada día aumentan de capacidad y bajan de precio.
-	Actualmente existen «discos duros» con memorias flash, los SSD.
-
-Suport magnètics
-
-Existe una superficie de plástico o de metal sobre la que el cabezal de lectura «llegará» con registros magnéticos enmagtzemades en un material magnético que se interpretarán como 0's i 1's.
-
-Este material magnético puede estar repartido sobre una superficie circular (disco) o sobre una cinta que se desplazará de una bobina a otra.
-
-Tienen mucha menos velocidad de R/W que las memorias de semiconductores.
-
-Tienen mucha más capacidad de datos que las memorias de semiconductores.
-
-Cuidado se rompe el iman facil.
-
-Ej.: Disquetes, discos duros, cintas de backup.
-
-Suports òptics
-
-La capa superior tiene "agujeros" que se interpretan como 1's y 0's.
-
-La capa inferior hace reflejar el rayo láser y calculando la diferencia de tiempo en el reflejo, puede determinarse si es un 0 o un 1.
-
-Su capacidad de datos es media: más que las memorias y menos que los soportes magnéticos.
-
-Su velocidad de acceso también es media. Más lento que los discos duros y más rápida que las cintas y disquetes.
-
-EMMAGATZEMAMENT REMOT: SAN, NAS, CLOUD
-
-1. SAN Storage Area Network
-
-Tenemos una red utilizada para conectar servidores, *arrays de discos y librerías de apoyo. Basada en tecnología *fibre *channel y *iSCSI.
-
-2. NAS Network Attached Storage
-
-Tecnología de almacenamiento dedicada a compartir la capacidad de un Servidor con ordenadores personales o servidores clientes a través de una red de uso general (normalmente *TCP/IP). Uso de protoclos CIFS, SMB, NFS, FTP o TFTP.
-
-3. CLOUD
-
-Almacenamiento a la nube también conocida como disco duro virtual. Es un espacio en un servidor que utilizamos para guardar archivos.
-
-
-3. ORGANITZACIO DE DISCOS|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-
-DISC DURS
-	Plato: Cada disco del disco
-	Cara: Amabs caras del disco
-	Cabezera: Numero de cabezeras.
-	Pista: Circumferencia dentro de cara.
-	Cilindro: Conjunto de varias pistas.
-	Sector: Cada una de las divisiones de una pista.
-
-PARTICIONS
-
-Crear Particion
-Formatear con un sistema de archivos (EXT4, NTFS,etc)
-
-Models de particionat
-
-MBR (Master Boot Record) Funcionaba con sistema de arranque BIOS
-GPT (GUID Partition Table) Modelo modelo Fujnciona con ssitema de arranque UEFI
-
-VENTAJAS DE HACER PARTICIONES
-
-Uso de sistemas de archivos antiguos
-Guardar un acopia de restauracion rapida en otra particion
-Dual S.O
-Separar particion de intercambio (SWAP) para mejor rendimiento
-Creacion de cuotas fisicas
-
-PARTICIONADO MBR
-
-BIOS: Primer prgorama que se ejecuta al arrancar
-	Creado por IBM 1983
-	Se almacena en memoria flash ubicada placa base
-	independiente al sistema de almacenamiento
-
-MBR: Registro en sector 0 leidop por BIOS en arrancar
-	Microsoft en 1983
-	Tabla de 4 entradas, 1 por particion
-	Cada entrada indica inicio de particion en disco
-
-ESTRUCTURA DE UN DISCO CON MBR
-
-	TIPOS DE PARTICIONES MBR
-		Particion Primaria: Hasta 4 o hasta 3 y 1 extendida.
-		Particion extensa: Particion que se divide en particiones lógicas.
-		Particion logica: Subdivision de la particion extensa. Se pueden crear las que quieras dentro.
-		Particion Activa: Estado de particion primaria.
-
-PARTICIONADO GPT
-
-GPT: nuevo estandar sustituye MBR y esta asociado a UEFI.
-A cada particion se le asocia un unido identificador GUID o UUID en Linux.
-
-VENTAJAS DE GPT
-
-Identificador GUID (id disco) y identificador de particion unico (PARTUUID).
-Etiqueta por particion individual
-GPT no tiene limite de particiones. 128 particiones en windows.
-No se necesitas particiones extensas niu logicas
-USA LBA tamaño maximo de disco de 2 ZiB (2^30 GiB)
-GPT crea cabecera y tabla de particiones de backup
-Utiliza CRC32 para detectar error y corrupcion.
-
-SISTEMAS DE ARCHIVOS
-
-Controla como se guardan o recuperan los datos.
-
-Funciones
-	Gestion del espacio de nmombres de ficheros
-	Gestion de espacio de almacenamiento
-		Assignar espacio a archivos
-		Liberar espacio de archivos borrados
-	Administracion de espacio libre/ocupado
-	Acceso a los datos guardados
-	Organizar ficheros del sistema
-	Asegurar proteccion de ficheros ACL's
-
-TIPOS DE SISTEMAS DE ARCHIVOS
-
-FAT (16,32) Fille Allocation Table MSDOS, Windows 95,98
-NTFS New Thechnology File System Windows NT a delante
-Ext2, 3, 4 Extended File System Version2, 3, 4, Linux
-HFS Hierarchical File System, Mac OS
-HFS+ Extended Hierarchival File System Mac OS
-
-
-EMMAGATZEMAMENT REDUNDANT: RAID|||||||||||||||||||||||||||||||||||||||||||||||||
-
-CONCEPTO RAID
-	Sistema de replicar la informacion en diferentes discos estandard, de manera que el sistema los ve como un sol odisco nombrado VOLUMEN.
-Uso
-	Tolerancia a falos
-	Augemnto de rendimiento
-	Capacidad de añadir descos y añadir discos en caliente
-	Alta disponibilidad, si un disco muere tenemos los otros
-
-TIPOS DE RAID SEGUN CONSTRUCCION
-
-Software
-Funciona instalando controladores de disco estandar y software ejecutandose en el equipo
-	Ventajas: Metodo universal, Pueden transportar discos y recueprar sin maquinarioa especifica
-	Desventajas: S.O hace calculos necesarios y el acceso a los discos en controladores de discos diferentes, cosa que carga la CPU
-
-Hardware
-Necesidad de un conttrolador de discod especial con multiples puertos ( placa base o PCIe)
-	Ventajas: No carga el S.O
-	Desventajas: Propietario, en caso de fallada de la controladora, los discos no se pueden leer con otra marca. Necesidad de tener el recambio disponible.
-
-TIPOS DE RAID
-
-Raid 0: Sin tolerancia a fallas
-Raid 1: Tolerancia a fallas, 2 discos min
-Raid 5: Tolerancai a fllas min 3 discos
-
-RAID 0
-Datos se distribuyen en diferentes discos como si fuesen un solo disco
-Alto rendimiento
-Si falla un disco pierdes datos
-
-RAID 1
-Datos de escriben en 2 discos
-Teolerancia a fallas
-Si un disco falla dse puede seguir trabajando ahsta qeu se cambie
-50% de espacio aprovechable
-
-RADI 5
-Tolernacia a fallas
-Minimo 3 discos
-Datos se escriben consecutivamente i alternativamente en los discos
-Si un disco falla, se puede continuar trabajando.
-
-
-
-COPIA DE SEGURETAT||||||||||||||||||||||||||||||||||||
-
-Medida de seguridad logica y passiva que conssite en crear duplicados de datos.
-
-Aseguramos integridad y disponiblidad
-
-
-Polítiques de còpies de seguretat
-
-	Identificar que datos necesitas preservar
-	Establecer la frecuencia de los procesos de copias y planificar la copia
-	Calcular volumen de datos
-	Dispositivos y soporte de almacenamiento
-	Almacenamiento fisico ignifugo
-	Planificar la restauracion de datos
-	Cifrado y compression
-	
-
-Estrategia de copias de seguridad 3-2-1
-
-3: Tendremos 3 copias de seguridad 
-2: guardar en copias en 2 formatos distintos, USB y NAS
-1: Guardar una copia en 1 ubicacion remota
-
-
-TIPOS DE COPIAS
-
-Completa: Incluye toda la informacion
-Diferencial: Copia parcial, Soloc copia los datos modificados des de la ultima copia completa
-Incremental: Copia parcial, Solo copia los datos modificados des de la ultima copia completa o incremental
+### ESTRUCTURA DE UN DISC AMB MBR
+- **TIPUS DE PARTICIONS MBR**
+    - Partició Primària: Fins a 4 o fins a 3 i 1 estesa.
+    - Partició estesa: Partició que es divideix en particions lògiques.
+    - Partició lògica: Subdivisió de la partició estesa. Es poden crear les que es vulguin dins.
+    - Partició Activa: Estat de partició primària.
+
+### PARTICIONAT GPT
+
+- **GPT**: Nou estàndard substitueix MBR i està associat a UEFI. A cada partició se li associa un identificador únic GUID o UUID en Linux.
+
+### Avantatges de GPT
+- Identificador GUID (id disc) i identificador de partició únic (PARTUUID).
+- Etiqueta per partició individual.
+- GPT no té límit de particions. 128 particions en Windows.
+- No es necessiten particions esteses ni lògiques.
+- Usa LBA amb mida màxima de disc de 2 ZiB (2^30 GiB).
+- GPT crea capçalera i taula de particions de backup.
+- Utilitza CRC32 per detectar errors i corrupció.
+
+---
+
+# SISTEMES DE FITXERS
+
+Controla com es guarden o recuperen les dades.
+
+### Funcions
+- Gestió de l'espai de noms de fitxers
+- Gestió d'espai d'emmagatzematge
+- Assignar espai a arxius
+- Alliberar espai d'arxius esborrats
+- Administració d'espai lliure/ocupat
+- Accés a les dades guardades
+- Organitzar fitxers del sistema
+- Assegurar protecció de fitxers (ACL's)
+
+### TIPUS DE SISTEMES DE FITXERS
+
+- **FAT (16, 32)**: File Allocation Table (MSDOS, Windows 95, 98)
+- **NTFS**: New Technology File System (Windows NT en endavant)
+- **Ext2, 3, 4**: Extended File System (Versió 2, 3, 4, Linux)
+- **HFS**: Hierarchical File System (Mac OS)
+- **HFS+**: Extended Hierarchical File System (Mac OS)
+
+---
+
+# EMMAGATZEMAMENT REDUNDANT: RAID
+
+### CONCEPTE RAID
+Sistema de replicar la informació en diferents discos estàndard, de manera que el sistema els veu com un sol disc nomenat VOLUM.
+
+### Ús
+- Tolerància a fallades
+- Augment de rendiment
+- Capacitat d'afegir discos i afegir discos en calent
+- Alta disponibilitat, si un disc falla tenim els altres
+
+### TIPUS DE RAID SEGONS CONSTRUCCIÓ
+
+- **Software**
+    - Funciona instal·lant controladors de disc estàndard i programari executant-se en l'equip.
+    - **Avantatges**: Mètode universal, poden transportar discos i recuperar sense maquinària específica.
+    - **Desavantatges**: El sistema operatiu fa els càlculs necessaris i l'accés als discos en controladors de discos diferents, cosa que carrega la CPU.
+
+- **Hardware**
+    - Necessitat d'un controlador de discos especial amb múltiples ports (placa base o PCIe).
+    - **Avantatges**: No carrega el sistema operatiu.
+    - **Desavantatges**: Propietari, en cas de fallada del controlador, els discos no es poden llegir amb una altra marca. Necessitat de tenir el recanvi disponible.
+
+### TIPUS DE RAID
+
+- **Raid 0**: Sense tolerància a fallades
+- **Raid 1**: Tolerància a fallades, 2 discos mínim
+- **Raid 5**: Tolerància a fallades mínim 3 discos
+
+### RAID 0
+- Dades es distribueixen en diferents discos com si fossin un sol disc.
+- Alt rendiment.
+- Si falla un disc, es perden les dades.
+
+### RAID 1
+- Dades es copien en 2 discos.
+- Tolerància a fallades.
+- Si un disc falla, es pot seguir treballant fins que es canviï.
+- 50% d'espai aprofitable.
+
+### RAID 5
+- Tolerància a fallades.
+- Mínim 3 discos.
+- Dades es copien consecutivament i alternativament en els discos.
+- Si un disc falla, es pot continuar treballant.
+
+---
+
+# COPIA DE SEGURETAT
+
+Mesura de seguretat lògica i passiva que consisteix en crear duplicats de dades. Assegurem integritat i disponibilitat.
+
+### Polítiques de còpies de seguretat
+- Identificar quines dades cal preservar
+- Establir la freqüència dels processos de còpies i planificar la còpia
+- Calcular el volum de dades
+- Dispositius i suports d'emmagatzematge
+- Emmagatzematge físic ignífug
+- Planificar la restauració de dades
+- Xifrat i compressió
+
+### Estratègia de còpies de seguretat 3-2-1
+- 3: Tindrem 3 còpies de seguretat
+- 2: Guardar còpies en 2 formats diferents, USB i NAS
+- 1: Guardar una còpia en 1 ubicació remota
+
+### TIPUS DE COPIES
+- **Completa**: Inclou tota la informació.
+- **Diferencial**: Còpia parcial, només copia les dades modificades des de l'última còpia completa.
+- **Incremental**: Còpia parcial, només copia les dades modificades des de l'última còpia completa o incremental.
