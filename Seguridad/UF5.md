@@ -1,4 +1,8 @@
 FIREWALLS I SEGURETAT PERIMETRAL
+<p align="center">
+<img src="imgs/seguretat-perimetral-firewalls-16bd7db6.png" width="600" />
+</p>
+
 Conceptos previos:
 IP, máscara, gateway, DNS:
 
