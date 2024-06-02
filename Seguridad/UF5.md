@@ -1,187 +1,149 @@
-FIREWALLS I SEGURETAT PERIMETRAL
-<p align="center">
-<img src="imgs/seguretat-perimetral-firewalls-16bd7db6.png" width="600" />
-</p>
+# FIREWALLS I SEGURETAT PERIMETRAL
 
-Conceptos previos:
-IP, máscara, gateway, DNS:
+## Conceptes previs:
+### IP, màscara, gateway, DNS:
+- **IP**: Adreça que identifica un dispositiu en una xarxa.
+- **Màscara de subxarxa**: Determina quina part de l'IP correspon a la xarxa i quina als hosts.
+- **Gateway**: Dispositiu que connecta una xarxa local amb una altra xarxa.
+- **DNS**: Servei que tradueix noms de domini a adreces IP.
 
-    IP: Dirección que identifica un dispositivo en una red.
-    Máscara de subred: Determina qué parte de la IP corresponde a la red y cuál a los hosts.
-    Gateway: Dispositivo que conecta una red local con otra red.
-    DNS: Servicio que traduce nombres de dominio a direcciones IP.
+### Mapes de xarxa lògic:
+- Representació visual d'una xarxa, mostrant dispositius i connexions.
+- Eines per dibuixar: Microsoft Visio, Lucidchart, etc.
 
-Mapas de red lógico:
+### Taula de rutes:
+- Informació que permet als routers determinar la millor ruta per enviar dades.
 
-    Representación visual de una red, mostrando dispositivos y conexiones.
-    Herramientas para dibujar: Microsoft Visio, Lucidchart, etc.
+### Segmentació de xarxa:
+- Dividir una xarxa gran en subxarxes més petites per millorar la gestió i la seguretat.
 
-Tabla de rutas:
+### Protocols de xarxa i model OSI:
+- **Model OSI**: Estructura en capes que descriu les funcions d'una xarxa.
+- **Exemple de burocràcia**: Cada capa del model OSI realitza una funció específica, similar a un departament en una empresa.
 
-    Información que permite a los routers determinar la mejor ruta para enviar datos.
+## Firewalls i seguretat perimetral
+### Mesures de seguretat perimetral:
+- **Firewall**: Dispositiu que bloqueja el tràfic no autoritzat i permet l'autoritzat.
+- **DMZ (Zona Desmilitaritzada)**: Segment de xarxa on es ubiquen servidors públics.
+- **IDS (Sistema de Detecció d'Intrusos)** i **IPS (Sistema de Prevenció d'Intrusos)**: Dispositius que monitoregen la xarxa per detectar i/o bloquejar activitats malicioses.
+- **Passarel·les antivirus i antispam**: Filtren tràfic maliciós.
+- **Honeypots**: Sistemes dissenyats per atraure i analitzar atacs.
 
-Segmentación de red:
+### Tipus de firewall:
+- **Implementació**:
+    - **Hardware**: Més cars i eficients, dedicats exclusivament a funcions de firewall.
+    - **Software**: Més econòmics, es poden instal·lar en hardware general.
+- **Ubicació**:
+    - **Corporatius o de xarxa**: Entre xarxes LAN i WAN.
+    - **Basats en host (personals)**: Protegeixen un sol dispositiu.
+- **Comportament i nivell del model OSI**:
+    - **Firewalls de paquets (Packet filter)**: Treballen en les capes 3 (Xarxa) i 4 (Transport).
+    - **Firewalls amb control d'estat (Stateful)**: Mantenen informació sobre connexions actives.
+    - **Firewalls de nivell d'aplicació (Application Layer)**: Analitzen el tràfic en la capa 7 (Aplicació).
 
-    Dividir una red grande en subredes más pequeñas para mejorar la gestión y la seguridad.
+### Limitacions dels firewalls:
+- No poden protegir contra atacs interns, negligència d'usuaris, enginyeria social, ni malware en arxius interns.
 
-Protocolos de red y modelo OSI:
+### Configuració de firewalls:
+- **Política permissiva**: Permetre tot el tràfic excepte el explícitament bloquejat.
+- **Política restrictiva**: Bloquejar tot el tràfic excepte el explícitament permès.
 
-    Modelo OSI: Estructura en capas que describe las funciones de una red.
-    Ejemplo de burocracia: Cada capa del modelo OSI realiza una función específica, similar a un departamento en una empresa.
+### Arquitectures de seguretat amb firewalls:
+- **Arquitectura d'1 router**:
+    - Usat en xarxes petites/domèstiques.
+    - Permet tot el tràfic de sortida i bloqueja el d'entrada no autoritzat.
+- **DMZ de host (Bastió)**:
+    - El tràfic extern es dirigeix a un únic host (bastió).
+    - Menys segur que una DMZ física.
+- **Dual Homed Host (o Gateway)**:
+    - Un host bastió intercepta tot el tràfic entre la xarxa interna i externa.
+    - No hi ha reenviament de tràfic directe entre xarxes LAN i WAN.
+- **DMZ amb un sol firewall (3-legged model)**:
+    - Firewall amb tres interfícies de xarxa: externa, DMZ i interna.
+    - Tot el tràfic ha de passar pel firewall.
+- **DMZ amb dos firewalls**:
+    - Dos firewalls separen les xarxes externa, DMZ i interna.
+    - Major seguretat, especialment si els firewalls són de diferents fabricants.
 
-Firewalls y seguridad perimetral
-Medidas de seguridad perimetral:
+### IDS i IPS:
+- **IDS (Sistema de Detecció d'Intrusos)**:
+    - Monitoritza el tràfic de la xarxa i genera alertes davant possibles atacs.
+    - Tipus: Network IDS (NIDS) i Host IDS (HIDS).
+- **IPS (Sistema de Prevenció d'Intrusos)**:
+    - Similar al IDS, però també pot bloquejar el tràfic maliciós.
+    - Més avançat i reactiu comparat amb els IDS.
 
-    Firewall: Dispositivo que bloquea el tráfico no autorizado y permite el autorizado.
-    DMZ (Zona Desmilitarizada): Segmento de red donde se ubican servidores públicos.
-    IDS (Sistema de Detección de Intrusos) y IPS (Sistema de Prevención de Intrusos): Dispositivos que monitorean la red para detectar y/o bloquear actividades maliciosas.
-    Pasarelas antivirus y antispam: Filtran tráfico malicioso.
-    Honeypots: Sistemas diseñados para atraer y analizar ataques.
+### Ubicació dels IDS:
+- **Darrere/davant del firewall**: Només detecta atacs externs.
+- **En un port d'inspecció del switch (mirror port)**: Pot monitoritzar tot el tràfic, però pot generar molt tràfic en el IDS.
+- **Usant un TAP (Test Access Point)**: Replica la comunicació per anàlisi sense afectar la xarxa original.
 
-Tipos de firewall:
+## Inventari i Monitorització del Tràfic de Xarxes
+### Inventari d'Actius
+Un administrador de xarxa ha de conèixer el sistema, documentant la xarxa per a la gestió i la seguretat. És essencial saber:
+- On actualitzar el software.
+- Detectar baixades de rendiment.
+- Controlar l'activitat de la xarxa.
 
-    Implementación:
-        Hardware: Más caros y eficientes, dedicados exclusivamente a funciones de firewall.
-        Software: Más económicos, pueden instalarse en hardware general.
+### Documentació de la Xarxa:
+- **Disseny físic de la xarxa**: Ubicació de dispositius i cablejat en el plànol de l'edifici.
+- **Disseny lògic de la xarxa**: Connexions entre dispositius, incloent configuració de xarxa (IP, nom d'host, serveis).
+- **Esquema de direccionament IP**: Taula amb noms, adreces IP, màscara de xarxa, Gateway, DNS i MAC.
+- **Còpies de seguretat de configuracions de dispositius**: Guardar configuració de routers, firewalls, switches.
+- **Seguiment bàsic de la xarxa**: Documentar el funcionament actual per comparar en cas de problemes.
 
-    Ubicación:
-        Corporativos o de red: Entre redes LAN y WAN.
-        Basados en host (personales): Protegen un solo dispositivo.
+### Seguiment d'Actualitzacions:
+- Actualitzar hardware, contractar personal, instal·lar software, etc., detectant anomalies i degradació del sistema.
 
-    Comportamiento y nivel del modelo OSI:
-        Firewalls de paquetes (Packet filter): Trabajan en las capas 3 (Red) y 4 (Transporte).
-        Firewalls con control de estado (Stateful): Mantienen información sobre conexiones activas.
-        Firewalls de nivel de aplicación (Application Layer): Analizan el tráfico en la capa 7 (Aplicación).
+### Inventari de la Xarxa
+L'inventari permet:
+- Saber què fan els usuaris.
+- Conèixer programes instal·lats i actualitzacions.
+- Avaluar característiques del hardware.
+- Determinar si es necessita nou hardware.
 
-Limitaciones de los firewalls:
+### Programes d'Inventari:
+- **Inventari d'actius**: Ordinadors, monitors, impressores.
+- **Vista detallada d'actius, mapa lògic**.
+- **Historial de modificacions**.
+- **Administració de sistemes operatius i software**.
+- **Gestió de components interns i connexions de xarxa**.
 
-    No pueden proteger contra ataques internos, negligencia de usuarios, ingeniería social, ni malware en archivos internos.
+### Funcionament:
+- Mode client/servidor amb un programa de gestió centralitzat i un agent informador en cada equip, o usant administració remota (SSH, SNMP).
 
-Configuración de firewalls:
+### Exemples:
+- **OCS Inventory**: Programa de codi obert per escanejar i inventariar dispositius.
+- **GLPI**: Programa de gestió d'inventari de codi obert.
 
-    Política permisiva: Permitir todo el tráfico excepto el explícitamente bloqueado.
-    Política restrictiva: Bloquear todo el tráfico excepto el explícitamente permitido.
+## Sniffers (Analitzadors de Protocols)
+Els sniffers inspeccionen el contingut de trames en la xarxa, en mode interactiu (temps real) o no interactiu (anàlisi forense). Les targetes de xarxa en mode promiscu accepten totes les trames, no només les destinades a elles.
 
-Arquitecturas de seguridad con firewalls:
+### Funcions:
+- Visualització i filtratge de trames en temps real.
+- Guardar i recuperar captures (pcap).
+- Reconstrucció de sessions TCP.
 
-    Arquitectura de 1 router:
-        Usado en redes pequeñas/domésticas.
-        Permite todo el tráfico de salida y bloquea el de entrada no autorizado.
+### Utilitat:
+- Educativa.
+- Depuració d'aplicacions de xarxa.
+- Anàlisi forense.
+- Detecció de comportaments anòmals.
+- Detectar configuracions incorrectes i atacs (DoS, ARP poisoning, MiTM).
 
-    DMZ de host (Bastión):
-        El tráfico externo se dirige a un único host (bastión).
-        Menos seguro que una DMZ física.
+### Exemples:
+- **Tcpdump, Wireshark, Tshark**: Analitzadors de protocols.
+- **Etherape, Ettercap, Bettercap, Kismet**: Monitorització i anàlisi de xarxa.
 
-    Dual Homed Host (o Gateway):
-        Un host bastión intercepta todo el tráfico entre la red interna y externa.
-        No hay reenvío de tráfico directo entre redes LAN y WAN.
+## Analitzadors de PCAP
+Les eines de captura i anàlisi de paquets utilitzen el format "pcap" per guardar el tràfic.
 
-    DMZ con un solo firewall (3-legged model):
-        Firewall con tres interfaces de red: externa, DMZ e interna.
-        Todo el tráfico debe pasar por el firewall.
+### Exemples:
+- **Tcpextract, Xplico, Network Miner, ChaosReader, Argus**: Eines per extreure i analitzar dades de captures pcap.
 
-    DMZ con dos firewalls:
-        Dos firewalls separan las redes externa, DMZ e interna.
-        Mayor seguridad, especialmente si los firewalls son de diferentes fabricantes.
+## Monitorització de Serveis i Servidors
+A més de conèixer els dispositius en la xarxa, és vital saber el seu rendiment i estat.
 
-IDS y IPS:
-
-    IDS (Sistema de Detección de Intrusos):
-        Monitoriza el tráfico de la red y genera alertas ante posibles ataques.
-        Tipos: Network IDS (NIDS) y Host IDS (HIDS).
-
-    IPS (Sistema de Prevención de Intrusos):
-        Similar al IDS, pero también puede bloquear el tráfico malicioso.
-        Más avanzado y reactivo comparado con los IDS.
-
-Ubicación de los IDS:
-
-    Detrás/delante del firewall: Solo detecta ataques externos.
-    En un puerto de inspección del switch (mirror port): Puede monitorear todo el tráfico, pero puede generar mucho tráfico en el IDS.
-    Usando un TAP (Test Access Point): Replica la comunicación para análisis sin afectar la red original.
-
-
-
-Inventario y Monitorización del Tráfico de Redes
-Inventario de Activos
-
-Un administrador de red debe conocer el sistema, documentando la red para la administración y la seguridad. Es esencial saber:
-
-    Dónde actualizar el software.
-    Detectar bajadas de rendimiento.
-    Controlar la actividad de la red.
-
-Documentación de la Red:
-
-    Diseño físico de la red: Ubicación de dispositivos y cableado en el plano del edificio.
-    Diseño lógico de la red: Conexiones entre dispositivos, incluyendo configuración de red (IP, nombre de host, servicios).
-    Esquema de direccionamiento IP: Tabla con nombres, direcciones IP, máscara de red, Gateway, DNS, y MAC.
-    Copias de seguridad de configuraciones de dispositivos: Guardar configuración de routers, firewalls, switches.
-    Seguimiento básico de la red: Documentar el funcionamiento actual para comparar en caso de problemas.
-
-Seguimiento de Actualizaciones:
-Actualizar hardware, contratar personal, instalar software, etc., detectando anomalías y degradación del sistema.
-Inventario de la Red
-
-El inventario permite:
-
-    Saber qué hacen los usuarios.
-    Conocer programas instalados y actualizaciones.
-    Evaluar características del hardware.
-    Determinar si se necesita nuevo hardware.
-
-Programas de Inventario:
-
-    Inventario de activos (computadoras, monitores, impresoras).
-    Vista detallada de activos, mapa lógico.
-    Historial de modificaciones.
-    Administración de sistemas operativos y software.
-    Gestión de componentes internos y conexiones de red.
-
-Funcionamiento:
-Modo cliente/servidor con un programa de gestión centralizado y un agente informador en cada equipo, o usando administración remota (SSH, SNMP).
-
-Ejemplos:
-
-    OCS Inventory: Programa de código abierto para escanear e inventariar dispositivos.
-    GLPI: Programa de gestión de inventario de código abierto.
-
-Sniffers (Analizadores de Protocolos)
-
-Los sniffers inspeccionan el contenido de tramas en la red, en modo interactivo (tiempo real) o no interactivo (análisis forense). Las tarjetas de red en modo promiscuo aceptan todas las tramas, no solo las destinadas a ellas.
-
-Funciones:
-
-    Visualización y filtrado de tramas en tiempo real.
-    Guardar y recuperar capturas (pcap).
-    Reconstrucción de sesiones TCP.
-
-Utilidad:
-
-    Educativa.
-    Depuración de aplicaciones de red.
-    Análisis forense.
-    Detección de comportamientos anómalos.
-    Detectar configuraciones incorrectas y ataques (DoS, ARP poisoning, MiTM).
-
-Ejemplos:
-
-    Tcpdump, Wireshark, Tshark: Analizadores de protocolos.
-    Etherape, Ettercap, Bettercap, Kismet: Monitorización y análisis de red.
-
-Analizadores de PCAP
-
-Las herramientas de captura y análisis de paquetes utilizan el formato "pcap" para guardar el tráfico.
-
-Ejemplos:
-
-    Tcpextract, Xplico, Network Miner, ChaosReader, Argus: Herramientas para extraer y analizar datos de capturas pcap.
-
-Monitorización de Servicios y Servidores
-
-Además de conocer los dispositivos en la red, es vital saber su rendimiento y estado.
-
-Ejemplos:
-
-    NTOP: Monitoriza en tiempo real usuarios y programas que consumen más recursos.
-    Nagios: Monitoriza servicios, muestra datos activos y notifica caídas de servicios.
+### Exemples:
+- **NTOP**: Monitoritza en temps real usuaris i programes que consumeixen més recursos.
+- **Nagios**: Monitoritza serveis, mostra dades actives i notifica caigudes de serveis.
