@@ -1,0 +1,18 @@
+https://youtu.be/VdGzPZ31ts8
+Tutorial de Git (18 de febrer 2022) per HolaMundoDev. [1h06' (castellà)]
+
+
+
+advanced / opcional:
+https://jakepage.xyz/the-guide-to-git-i-never-had (abril 2024)
+JakePageGITworkflow.png
+git commit --amend
+
+https://davidinformatico.com/apuntes-git
+estructura_git-1024x960.webp
+
+
+https://ioc.xtec.cat/materials/FP/Recursos/fp_daw_m08_/web/fp_daw_m08_htmlindex/WebContent/u4/a2/continguts.html
+per veure que els sistemes de control de versions es treballen (més) a DAW.M08 (Desplegament d'aplicacions).
+
+

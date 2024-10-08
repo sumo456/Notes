@@ -1,0 +1,203 @@
+3. Informatica al nuvol
+
+RA3. Identifica sistemes basats en cloud/ntvol i la seva influéncia en el desenvolupament dels sistemes
+digitals.
+
+Criteris d’avaluaci6
+
+1. Identifica els diferents nivells del cloud/nuvol.
+
+2. Identifica les principals Funcions del cloud/ntvol (processament de dades, intercanvi d'informacid,
+execucié d'aplicacions, entre altres).
+
+3. Descriu el concepte d’edge computing i la seva relacié amb el cloud/nuvol.
+
+4. Defineix els conceptes de Fog i mist i les seves zones d'aplicacié en el conjunt.
+
+5. Identifica els avantatges que proporciona la utilitzacié del cloud/ntvol en els sistemes connectats.
+
+Cloud/nivol: avantatges, nivells i Funcions.
+
+El ntvol (0 “cloud” en anglés) s'ha convertit en una part fonamental de l'estratégia tecnologica de moltes
+empreses. A continuacid, es presenten els avantatges, els nivells i les Funcions del nuvol en l'entorn
+empresarial.
+
+Avantatges que proporciona la utilitzacié del cloud/nivol en els sistemes connectats.
+
+1. Escalabilitat: Permet a les empreses augmentar o disminuir els recursos d'acord amb les necessitats de
+negoci, Facilitant la gestid de pics de demanda.
+
+2. Flexibilitat: Les empreses poden adaptar les seves solucions tecnologiques rapidament i eficientment,
+permetent una resposta més agil al mercat.
+
+3. Costos reduits: El model de pagament per Us i l'eliminacid de costos d'inversié en infraestructura Fisica
+redueixen les despeses operatives.
+
+4. Accessibilitat: Les aplicacions i dades sén accessibles des de qualsevol lloc amb connexi6 a Internet,
+millorant la col-laboracié ila productivitat.
+
+5. Seguretat i recuperacié de desastres: Els proveidors de serveis en el ntvol ofereixen solucions millors
+de seguretat i copies de seguretat automatiques, millorant la proteccié de dades.
+
+Nivells del nivol
+
+1. Infraestructura com a servei (laaS): Proporciona recursos de computacid basics com a servidors,
+xarxes, emmagatzematge i sistemes operatius. Exemple: Amazon Web Services (AWS) EC2, Google Cloud
+Compute Engine.
+
+2. Plataforma com a servei (PaaS): Ofereix un entorn complet per desenvolupar, executar i gestionar
+aplicacions sense la complexitat de gestionar la infraestructura subjacent. Exemple: Google App Engine,
+Microsoft Azure App Service.
+
+3. Programari com a servei (SaaS): Proporciona aplicacions a través d'Internet, eliminant la necessitat
+d'instal-lar i executar software a la nostra infraestructura. Exemple: Google Workspace, Salesforce,
+Microsoft 365.
+
+Funcions del cloud/ntvol: processament de dades, intercanvi d'informacié, execucid
+d'aplicacions, entre altres.
+
+El cloud computing o ntvol ofereix diverses funcions clau que Faciliten la gestid i el processament de dades
+en entorns digitals. Algunes de les més importants son:
+
+1. Processament de dades: Permet analitzar i processar grans volums de dades, facilitant l'obtencid
+d'insights i informes en temps real.
+
+2. Intercanvi d'informaci6: Proporciona plataformes per compartir documents, fitxers i dades entre
+usuaris i empreses de manera rapida i segura.
+
+3. Execucié d'aplicacions: Permet l'allotjament d'aplicacions en el nuvol, facilitant l'accés remot i reduint
+la necessitat de recursos locals.
+
+4, Emmagatzematge escalable: Ofereix opcions d'emmagatzematge flexible que s'ajusten a les
+necessitats canviants de les empreses, sense la necessitat d'inversions en infraestructura fisica.
+
+5. Seguretat i recuperacié de dades: Inclou Funcions per protegir dades i garantir la seva recuperacié en
+cas de fallades o pérdues.
+
+6. Col-laboracié: Permet que multiples usuaris treballin simultaniament en documents i projectes,
+millorant la productivitat i l'eficiéncia.
+
+7. Maquina virtual i contenidors: Facilita la creacié i gestid de maquines virtuals i contenidors, millorant la
+Flexibilitat i l'eficiéncia dels recursos.
+
+Aquestes funcions fan que el cloud computing sigui essencial en l'actualitat per a empreses i usuaris
+particulars, permetent-los adaptar-se rapidament a les necessitats canviants del mercat.
+
+Conclusié
+
+El ntvol ofereix multiples avantatges, nivells i Funcions que poden transformar l'entorn empresarial,
+proporcionant solucions eficients, Flexibles i segures que ajuden a les empreses a adaptar-se als reptes i
+oportunitats del mercat actual.
+
+Models de nivol: public, privat, hibrid, multindvol.
+
+Els models de nuvol es poden classificar en quatre categories principals: public, privat, hibrid i multindvol. A
+continuacié es detallen cadascun d'aquests models, destacant les seves caracteristiques, avantatges i
+inconvenients.
+
+1. Nuvol Public
+
+Descripcié: En un model de nivol public, els recursos i serveis es proporcionen per un proveidor extern i
+estan disponibles per a qualsevol persona que desitgi utilitzar-los. La infraestructura es comparteix entre
+multiples organitzacions o usuaris.
+
+Avantatges: - Costos reduits: No cal invertir en infraestructura fisica, ja que es paga per lus dels recursos. -
+Escalabilitat: Permet augmentar o disminuir rapidament els recursos en Funcid de les necessitats. -
+Manteniment: El proveidor s'encarrega del manteniment i les actualitzacions.
+
+Inconvenients: - Seguretat: Els usuaris poden tenir preocupacions sobre la seguretat i la privadesa de les
+dades, ja que aquestes es comparteixen amb altres clients. - Control limitat: Les empreses tenen poc control
+sobre la infraestructura i els serveis.
+
+Exemples: Amazon Web Services (AWS), Google Cloud Platform (GCP), Microsoft Azure.
+
+2. Nuvol Privat
+
+Descripcié: En un nuvol privat, la infraestructura i els serveis es dediquen a una sola organitzacié. Es poden
+gestionar de manera interna o ser proporcionats per un tercer, pero sempre amb els recursos aillats i dedicats
+especificament a una entitat.
+
+Avantatges: - Seguretat: Major control sobre la seguretat i la privadesa de les dades, cosa que el fa ideal per
+a organitzacions amb altes exigéncies regulatories. - Personalitzacié: Les empreses poden personalitzar la
+infraestructura d'acord amb les seves necessitats especifiques.
+
+Inconvenients: - Costos més alts: La inversid inicial en infraestructura i el manteniment poden ser elevats. -
+Escalabilitat limitada: Pot ser més dificil escalar que en un nuvol public, depenent dels recursos disponibles.
+
+Exemples: Solucions de nuvol privat implementades per empreses com IBM o Rackspace.
+3. Nuvol Hibrid
+
+Descripcié: Un ntvol hibrid combina els elements dels ntivols publics i privats. Aixd permet que les empreses
+
+utilitzin els avantatges de tots dos models, amb dades i aplicacions que poden compartir-se entre entorns.
+
+Avantatges: - Flexibilitat: Les organitzacions poden optar per mantenir aplicacions sensibles en un nuvol
+privat mentre utilitzen recursos publics per a tasques que no son tan critiques. - Escalabilitat: Es poden
+ampliar els recursos mitjancant el nuvol public en Funcid de les necessitats.
+
+Inconvenients: - Complexitat: La gestid d'un entorn hibrid pot ser complicada, requerint estratégies
+d'integracié i seguretat robustes. - Costos: Poden ser més elevats depenent de com s'utilitzin els recursos.
+
+Exemples: Solucions que incorporen serveis com Microsoft Azure Stack o VMware Cloud.
+
+4. Multinivol
+
+Descripcié: El model multintvol implica I's de multiples serveis de nuvol de diferents proveidors. Les
+organitzacions poden optar per utilitzar ofertes de diversos nuvols publics, privats, o hibrids segons les seves
+necessitats.
+
+Avantatges: - Millor optimitzacié: Permet a les empreses triar els millors serveis i preus de cada proveidor. -
+Reduccio del risc: Redueix el risc de tenir un Unic punt de fallada, ja que les dades i aplicacions es
+distribueixen entre diferents proveidors.
+
+Inconvenients: - Complexitat en la gestidé: Gestionar multiples proveidors pot complicar la infraestructura i
+les operacions. - Integracié: Pot ser dificil integrar diferents serveis i plataformes, especialment si no son
+compatibles.
+
+Exemples: Empreses que utilitzen serveis de Google Cloud, AWS i Azure simultaniament per a diferents
+Funcions.
+
+Conclusié
+
+Cada model de ntvol té els seus avantatges i inconvenients, i la decisid sobre quin model adoptar dependra
+de les necessitats especifiques de l'organitzacid, incloent factors com la seguretat, costos, escalabilitat i
+complexitat operativa. Les empreses sovint opten per un model combinat (hibrid) o un enfocament
+multinuvol per aprofitar al maxim les oportunitats que ofereixen els diferents models de nuvol.
+
+Concepte d’edge computing i la seva relacio amb el cloud/nivol.
+
+Ledge computing és un model de computacié que processa dades a la periféria de la xarxa, més a prop de la
+Font d'informacié (com dispositius loT), en lloc de transmetre-les a un nuvol central per al seu processament.
+Aquesta arquitectura redueix la laténcia, millora la velocitat de resposta i optimitza l'ample de banda. La
+relacié amb el nuvol és complementaria: l'edge computing maneja els processos locals, mentre que el nuvol
+s'utilitza per a l'emmagatzematge, analisi i gestid de dades a gran escala. Juntes, aquestes tecnologies
+permeten una gestié més eficient i intel-ligent de les dades.
+
+Fog i Mist: concepte i zones d’aplicacié. Cloud computing.
+
+Fog Computing i Mist Computing son extensions de l'edge computing que s'orienten a la distribucié de la
+computacionalitat a la xarxa.
+
+Fog Computing es refereix a la infraestructura que permet el processament i l'emmagatzematge de dades
+prop de la Font d'origen, com switches o routers, en lloc de fer-ho al nuvol. Aixd permet una laténcia reduida i
+una resposta més rapida en aplicacions que requereixen temps real, com vehicles autonoms, sistemes de
+seguretat i ciutats intel-ligents. La seva aplicacié és essencial en entorns on la velocitat i la Fiabilitat s6n clau,
+com en la salut digital i la monitoritzacié industrial.
+
+Mist Computing, per la seva banda, va un pas més enlla i porta el processament encara més a prop de les
+dades, tradicionalment a nivell de dispositius individuals o de bord (edge devices). Aquest model és util en
+situacions amb limitats recursos de xarxa, com sensors intel-ligents i dispositius loT, on les decisions
+immediates son vitals.
+
+Ambdues arquitectures complementen el cloud computing, ja que permeten un processament més eficient i
+immediat de les dades locals, mentre que el nuvol ofereix emmagatzematge i analisi de dades a gran escala.
+La integracié d'aquests models proporciona solucions més robustes i intel-ligents per a moltes aplicacions
+
+modernes.
+
+Aplicacions practiques dels sistemes cloud. Exemples d'us de cloud
+computing en sectors productius.
+
+Practica de GIT/GITHUB
+
+(- tasca al Moodle -)
