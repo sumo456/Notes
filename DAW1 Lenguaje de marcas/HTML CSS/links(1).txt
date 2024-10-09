@@ -1,0 +1,19 @@
+HTML entity encoder/decoder (baixeu la pàgina!) 
+https://mothereff.in/html-entities
+
+The W3C Markup Validation Service
+https://validator.w3.org/
+
+
+Validador off-line d'HTML
+https://validator.github.io/validator/
+Cal baixar el fitxer https://github.com/validator/validator/releases/download/20.6.30/vnu.jar_20.6.30.zip (** o la versió que hi hagi **) i descomprimir-lo de manera que tingueu una carpeta vnu en /home.
+
+Llavors, per validar un fitxer html (per exemple FILE.html) cal anar a la carpeta on es troba el fitxer html i escriure (sense el $):
+
+$ java -jar ~/vnu/vnu.jar FILE.html
+
+
+CSS bento (aplicació educativa interactiva)
+https://flukeout.github.io
+
