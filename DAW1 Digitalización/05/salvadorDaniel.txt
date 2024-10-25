@@ -1,0 +1,9 @@
+¿Cuál de las siguientes afirmaciones describe con mayor precisión una característica fundamental del Big Data?
+
+El Big Data se distingue por la gran cantidad de datos heterogéneos que requieren enfoques de análisis especializados debido a su alta variabilidad.
+
+El Big Data se caracteriza por el hecho de que todos sus datos están organizados en estructuras fijas y fáciles de integrar.
+
+La velocidad es una de las características clave del Big Data, lo que significa que los datos se generan en grandes cantidades pero con flujos irregulares y esporádicos.
+
+Las fuentes de datos en Big Data son siempre anónimas y no se pueden integrar de manera significativa con otras fuentes.
